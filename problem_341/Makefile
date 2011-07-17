@@ -1,6 +1,6 @@
 include $(GOROOT)/src/Make.inc
 
 TARG=problem_341
-GOFILES=main.go
+GOFILES=golomb.go
 
-include $(GOROOT)/src/Make.cmd
+include $(GOROOT)/src/Make.pkg
