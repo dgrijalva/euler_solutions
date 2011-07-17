@@ -13,3 +13,6 @@ package main
 // Find ΣG(n3) for 1  n  106.
 // 
 
+func main () {
+	
+}
