@@ -33,14 +33,16 @@ func StartGenerator()(c chan Entry) {
 }
 
 func startGenerator(c chan Entry) {
-	var n, gn, gnr, gnn uint64
+	var n, gn, gnr, gnn, gnnr uint64
 	n = 1
 	gn = 1
 	gnr = 0
+
 	gnn = 1
+	gnnr = 0
 	for {
-		if n < 10 {
-			fmt.Printf("step\t%v\t%v\t%v\t%v\n", n, gn, gnr, gnn)
+		if n < 15 {
+			fmt.Printf("step\t%v\t%v\t%v\t%v\t%v\n", n, gn, gnr, gnn, gnnr)
 		}
 		c <- Entry{n,gn}
 		
@@ -50,7 +52,14 @@ func startGenerator(c chan Entry) {
 		} else {
 			gn++
 			gnr = gnn
-			gnn = n
 		}
+
+		if gnnr > 0 {
+			gnnr--
+		} else {
+			gnn++
+			gnnr = gnn
+		}
+		
 	}
 }
