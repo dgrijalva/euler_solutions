@@ -28,5 +28,9 @@ func TestExampleData(t *testing.T){
 }
 
 func TestResult(t *testing.T){
-	fmt.Println("The answer is", Largest(3))
+	l := Largest(3)
+	fmt.Println("The answer is", l)
+	if 906609 != l {
+		t.Errorf("Largest palindrome product of 3 digits: %v should be 906609", l)
+	}
 }

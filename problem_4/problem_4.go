@@ -26,10 +26,10 @@ func Palindrome(i int)bool {
 
 func Largest(digits int)(l int) {
 	var a, b, c int
-	for a = high(digits); a > 0; a-- {
-		for b = a; b > 0; b-- {
+	for a = high(digits); a > 0 && a * a > l; a-- {
+		for b = a; b > 0 && a * b > l; b-- {
 			c = a * b
-			if c > l && Palindrome(c) {
+			if Palindrome(c) {
 				l = c
 			}
 		}
